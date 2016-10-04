@@ -1,17 +1,37 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Welcome to Teemogak!</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="home">
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>app/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-searchbar [(ngModel)]="searchName"
+                 (search)="loadSummoner($event)"
+                 placeholder="조회할 소환사명을 입력하세요"
+                 autocorrect="off">
+  </ion-searchbar>
+  <ion-label>
+    <h2>소환사 정보</h2>
+  </ion-label>
+
+  <ion-label>Name</ion-label>
+  <ion-item>
+    {{summoner.name}}
+  </ion-item>
+  <ion-label>Id</ion-label>
+  <ion-item>
+    {{summoner.id}}
+  </ion-item>
+  <ion-label>Profile Icon Id</ion-label>
+  <ion-item>
+    {{summoner.profileIconId}}
+  </ion-item>
+  <ion-label>Level</ion-label>
+  <ion-item>
+    {{summoner.summonerLevel}}
+  </ion-item>
+  <ion-label>RevisionDate</ion-label>
+  <ion-item>
+    {{revisionDate}}
+  </ion-item>
 </ion-content>
